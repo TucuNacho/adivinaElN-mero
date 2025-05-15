@@ -9,12 +9,15 @@ const game = () => {
 const formulario = document.querySelector(".miFormulario");
 formulario.addEventListener("submit", function (event) {
   event.preventDefault();
-  const adivinar = document.querySelector("#boton-num");
-  if (parseInt(adivinar.value) === numeroAleatorio) {
-    document.writeln("Ganaste");
+  const adivinar = parseInt(document.querySelector("#boton-num").value);
+  if (parseInt(adivinar) === numeroAleatorio) {
+    alert("Ganaste");
+  } else if (adivinar > numeroAleatorio) {
+    alert("Un poco menos 😆");
   } else {
-    document.writeln("Perdiste");
+    alert("Un poco mas 😜");
   }
+  formulario.reset();
 });
 
 const iniciarJuego = document.querySelector(".game");
